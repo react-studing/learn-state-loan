@@ -1,0 +1,74 @@
+.name-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.name-input label {
+  color: white;
+}
+.name-input input {
+  width: 90%;
+}
+.phone-number-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.phone-number-input label {
+  color: white;
+}
+
+.phone-number-input input {
+  width: 90%;
+}
+.age-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.age-input label {
+  color: white;
+}
+.age-input input {
+  width: 90%;
+}
+
+.isEmployee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.isEmployee label {
+  color: white;
+}
+.isEmployee input {
+  width: 30px;
+  height: 30px;
+}
+.salary-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.salary-input label {
+  color: white;
+}
+.salary-input select {
+  width: 90%;
+}
+.submit-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit-button {
+  background-color: #737577;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
