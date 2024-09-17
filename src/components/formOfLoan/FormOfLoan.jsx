@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./formOfLoan.css";
 import LoanPopup from "../loanPopup/LoanPopup";
+import LoanInput from "../loanInput/LoanInput";
 export default function FormOfLoan({ title }) {
   const [formInputs, setFormInputs] = useState({
     name: "",
@@ -17,9 +18,17 @@ export default function FormOfLoan({ title }) {
   function handleRemovePopup() {
     setMsgOfPopup({ ...msgOfPopup, display: "none" });
   }
+  function handleInputNameChange(event) {
+    setFormInputs({ ...formInputs, name: event.target.value });
+  }
+  function handleInputPhoneNumberChange(event) {
+    setFormInputs({ ...formInputs, phoneNumber: event.target.value });
+  }
+  function handleInputAgeChange(event) {
+    setFormInputs({ ...formInputs, Age: event.target.value });
+  }
   return (
     <>
-      <h1 style={{ color: "white", textAlign: "center" }}>{title}</h1>
       <form
         action=""
         onSubmit={(event) => {
@@ -27,38 +36,26 @@ export default function FormOfLoan({ title }) {
         }}
       >
         <div className="name-input">
-          <label htmlFor="1">Name :</label>
-          <input
-            type="text"
-            id="1"
-            value={formInputs.name}
-            onChange={(event) => {
-              setFormInputs({ ...formInputs, name: event.target.value });
-            }}
+          <LoanInput
+            title="Name"
+            formInputs={formInputs.name}
+            handleInputChange={handleInputNameChange}
           />
         </div>
         <br />
         <div className="phone-number-input">
-          <label htmlFor="2">Phone Number :</label>
-          <input
-            type="text"
-            id="2"
-            value={formInputs.phoneNumber}
-            onChange={(event) => {
-              setFormInputs({ ...formInputs, phoneNumber: event.target.value });
-            }}
+          <LoanInput
+            title="Phone Number"
+            formInputs={formInputs.phoneNumber}
+            handleInputChange={handleInputPhoneNumberChange}
           />
         </div>
         <br />
         <div className="age-input">
-          <label htmlFor="3">Age :</label>
-          <input
-            type="text"
-            id="3"
-            value={formInputs.Age}
-            onChange={(event) => {
-              setFormInputs({ ...formInputs, Age: event.target.value });
-            }}
+          <LoanInput
+            title="Age"
+            formInputs={formInputs.Age}
+            handleInputChange={handleInputAgeChange}
           />
         </div>
         <br />
