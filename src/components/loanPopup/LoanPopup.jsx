@@ -1,12 +1,15 @@
 import "./loanPopup.css";
-export default function LoanPopup({ msg, colorOfMsg, display, setMsgOfPopup }) {
+export default function LoanPopup({
+  msg,
+  colorOfMsg,
+  display,
+  handleRemovePopup,
+}) {
   return (
     <div
       className="loan-popup"
       style={{ display: display }}
-      onClick={() => {
-        setMsgOfPopup({ msg: msg, colorOfMsg: colorOfMsg, display: "none" });
-      }}
+      onClick={handleRemovePopup}
     >
       <div className="for-display">
         <h1 style={{ color: colorOfMsg }} className="loan-popup-h1">

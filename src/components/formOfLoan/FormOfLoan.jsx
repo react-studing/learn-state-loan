@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./formOfLoan.css";
 import LoanPopup from "../loanPopup/LoanPopup";
-export default function FormOfLoan() {
+export default function FormOfLoan({ title }) {
   const [formInputs, setFormInputs] = useState({
     name: "",
     phoneNumber: "",
@@ -14,8 +14,12 @@ export default function FormOfLoan() {
     colorOfMsg: "",
     display: "none",
   });
+  function handleRemovePopup() {
+    setMsgOfPopup({ ...msgOfPopup, display: "none" });
+  }
   return (
     <>
+      <h1 style={{ color: "white", textAlign: "center" }}>{title}</h1>
       <form
         action=""
         onSubmit={(event) => {
@@ -150,7 +154,7 @@ export default function FormOfLoan() {
         msg={msgOfPopup.msg}
         colorOfMsg={msgOfPopup.colorOfMsg}
         display={msgOfPopup.display}
-        setMsgOfPopup={setMsgOfPopup}
+        handleRemovePopup={handleRemovePopup}
       />
     </>
   );
